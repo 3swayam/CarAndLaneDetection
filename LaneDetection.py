@@ -1,11 +1,11 @@
-import os
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 import cv2
 from scipy import stats
 
-# Start of Function
+# Start of Functions
+
 # Convenience function used to show a list of images
 def show_image_list(img_list, cols=2, fig_size=(15, 15), img_labels='name', show_ticks=True):
     img_count = len(img_list)
@@ -43,6 +43,7 @@ def isolate_yellow_hsl(img):
     yellow_mask = cv2.inRange(img, low_threshold, high_threshold)
 
     return yellow_mask
+
 # Image should have already been converted to HSL color space
 def isolate_white_hsl(img):
     # Caution - OpenCV encodes the data in ***HLS*** format
@@ -54,14 +55,17 @@ def isolate_white_hsl(img):
     yellow_mask = cv2.inRange(img, low_threshold, high_threshold)
 
     return yellow_mask
+
 def combine_hsl_isolated_with_original(img, hsl_yellow, hsl_white):
     hsl_mask = cv2.bitwise_or(hsl_yellow, hsl_white)
     return cv2.bitwise_and(img, img, mask=hsl_mask)
+
 def filter_img_hsl(img):
     hsl_img = cv2.cvtColor(img, cv2.COLOR_RGB2HLS)
     hsl_yellow = isolate_yellow_hsl(hsl_img)
     hsl_white = isolate_white_hsl(hsl_img)
     return combine_hsl_isolated_with_original(img, hsl_yellow, hsl_white)
+
 def get_vertices_for_img(img):
     imshape = img.shape
     img_shape=img.shape
@@ -106,6 +110,7 @@ def region_of_interest_chatgpt(img):
     # returning the image only where mask pixels are nonzero
     masked_image = cv2.bitwise_and(img, mask)
     return masked_image
+
 def region_of_interest(img):
     #defining a blank mask to start with
     mask = np.zeros_like(img)
@@ -125,8 +130,10 @@ def region_of_interest(img):
     #returning the image only where mask pixels are nonzero
     masked_image = cv2.bitwise_and(img, mask)
     return masked_image
+
 def hough_transform(canny_img, rho, theta, threshold, min_line_len, max_line_gap):
     return cv2.HoughLinesP(canny_img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)
+
 def draw_lines(img, lines, color=[255, 0, 0], thickness=10, make_copy=True,label='Lane'):
     # Copy the passed image
     img_copy = np.copy(img) if make_copy else img
@@ -139,6 +146,7 @@ def draw_lines(img, lines, color=[255, 0, 0], thickness=10, make_copy=True,label
                 cv2.putText(img_copy, label, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
     return img_copy
+
 def separate_lines(lines, img):
     img_shape = img.shape
 
@@ -175,11 +183,13 @@ def separate_lines(lines, img):
                     right_lane_lines.append([[x1, y1, x2, y2]])
 
     return left_lane_lines, right_lane_lines
+
 def color_lanes(img, left_lane_lines, right_lane_lines, left_lane_color=[255, 0, 0], right_lane_color=[0, 0, 255]):
     left_colored_img = draw_lines(img, left_lane_lines, color=left_lane_color, make_copy=True,label="Left")
     right_colored_img = draw_lines(left_colored_img, right_lane_lines, color=right_lane_color, make_copy=False,label="Right")
 
     return right_colored_img
+
 def find_lane_lines_formula(lines):
     xs = []
     ys = []
@@ -196,8 +206,7 @@ def find_lane_lines_formula(lines):
     # Remember, a straight line is expressed as f(x) = Ax + b. Slope is the A, while intercept is the b
     return (slope, intercept)
 
-"""We now define a function to trace a line on the lane:"""
-
+# Define a function to trace a line on the lane
 def trace_lane_line(img, lines, top_y, make_copy=True):
     # Check if lines is None or empty
     if lines is None or not lines:
@@ -229,13 +238,16 @@ def trace_both_lane_lines(img, left_lane_lines, right_lane_lines):
     img_with_lane_weight =  cv2.addWeighted(img, 0.7, full_left_right_lanes_img, 0.3, 0.0)
 
     return img_with_lane_weight
+
 def canny_edge_detector(blurred_img, low_threshold, high_threshold):
     return cv2.Canny(blurred_img, low_threshold, high_threshold)
+
 def grayscale(img):
     return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+
 def gaussian_blur(grayscale_img, kernel_size=3):
     return cv2.GaussianBlur(grayscale_img, (kernel_size, kernel_size), 0)
-# End of Function
+# End of Functions
 
 def process_lane_detection(original_image):
     img_shape = original_image.shape

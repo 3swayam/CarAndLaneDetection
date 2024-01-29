@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b27c4f1-03f6-43d6-99fd-a673489676cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AIRecipeGenerator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarDetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LaneDetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helper/coco.names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/img9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/lines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output_images/test.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_data/Road_Image.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_data/video.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AIRecipeGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIRecipeGenerator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +50,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/swayamrout/Public/Code/AIRecipeGenerator"
+    "last_opened_file_path": "/Users/swayamrout/Public/Code/AIRecipeGenerator",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -217,8 +195,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.LaneDetection" />
         <item itemvalue="Python.CarDetection" />
+        <item itemvalue="Python.LaneDetection" />
         <item itemvalue="Python.lane" />
         <item itemvalue="Python.lines" />
         <item itemvalue="Python.test" />

@@ -48,7 +48,6 @@ def process_vehicle_detection(image):
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
-
 # Read Video file and processs
 # cap = cv2.VideoCapture('training_data/video.mp4')
 # subtracao = cv2.createBackgroundSubtractorMOG2()
