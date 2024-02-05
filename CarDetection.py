@@ -2,6 +2,7 @@
 import cv2
 import numpy as np
 
+confidence_score=0.8
 # Load YOLO
 net = cv2.dnn.readNet('helper/yolov3.weights', 'helper/yolov3.cfg')
 classes = []
@@ -26,7 +27,7 @@ def process_vehicle_detection(image):
             scores = obj[5:]
             class_id = np.argmax(scores)
             confidence = scores[class_id]
-            if confidence > 0.5:  # You can adjust the confidence threshold
+            if confidence > confidence_score:  # You can adjust the confidence threshold
                 center_x = int(obj[0] * width)
                 center_y = int(obj[1] * height)
                 w = int(obj[2] * width)
@@ -36,13 +37,13 @@ def process_vehicle_detection(image):
                 y = int(center_y - h / 2)
 
                 cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                # cv2.putText(image, classes[class_id], (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-                cv2.putText(image, 'vehicle', (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                cv2.putText(image, classes[class_id], (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                #cv2.putText(image, 'vehicle', (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
     return  image
 
 # Load the image
-# original_image = cv2.imread('images2/solidWhiteRight.jpg')
+# original_image = cv2.imread('images2/um_000066.png')
 # output_image= process_vehicle_detection(original_image)
 # cv2.imshow('Original Vehicle',output_image)
 # cv2.waitKey(0)

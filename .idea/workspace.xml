@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b27c4f1-03f6-43d6-99fd-a673489676cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AIRecipeGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIRecipeGenerator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -37,6 +38,9 @@
   "keyToString": {
     "Python.CarDetection.executor": "Run",
     "Python.LaneDetection.executor": "Run",
+    "Python.LaneDetectionV2.executor": "Run",
+    "Python.LineType.executor": "Run",
+    "Python.SolidLane.executor": "Run",
     "Python.Test.executor": "Run",
     "Python.VC.executor": "Run",
     "Python.VehicleCounter.executor": "Run",
@@ -50,17 +54,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/swayamrout/Public/Code/AIRecipeGenerator",
+    "last_opened_file_path": "/Users/swayamrout/Public/Code/AIRecipeGenerator/images2",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/helper" />
       <recent name="$PROJECT_DIR$/training_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.CarDetection">
     <configuration name="CarDetection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AIRecipeGenerator" />
       <option name="ENV_FILES" value="" />
@@ -83,7 +90,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="LaneDetection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="LaneDetectionV2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AIRecipeGenerator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,7 +103,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LaneDetection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LaneDetectionV2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -105,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lane" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="LineType" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AIRecipeGenerator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,7 +125,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lane.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LineType.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -127,7 +134,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lines" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="SolidLane" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AIRecipeGenerator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +147,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lines.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SolidLane.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,9 +203,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.CarDetection" />
-        <item itemvalue="Python.LaneDetection" />
-        <item itemvalue="Python.lane" />
-        <item itemvalue="Python.lines" />
+        <item itemvalue="Python.SolidLane" />
+        <item itemvalue="Python.LaneDetectionV2" />
+        <item itemvalue="Python.LineType" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -219,6 +226,28 @@
       <option name="presentableId" value="Default" />
       <updated>1705341681222</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fine tuned lane detection with bounding box">
+      <option name="closed" value="true" />
+      <created>1707064887724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707064887724</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fine tuned lane detection with bounding box">
+      <option name="closed" value="true" />
+      <created>1707146259095</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707146259095</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added readme file and updated few functions, comments" />
+    <MESSAGE value="Fine tuned lane detection with bounding box" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fine tuned lane detection with bounding box" />
   </component>
 </project>

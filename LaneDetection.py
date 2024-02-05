@@ -250,15 +250,9 @@ def gaussian_blur(grayscale_img, kernel_size=3):
 # End of Functions
 
 def process_lane_detection(original_image):
-    img_shape = original_image.shape
-    hsl_images = cv2.cvtColor(original_image, cv2.COLOR_RGB2HLS)
 
-    hsl_yellow_images = isolate_yellow_hsl(hsl_images)
-    hsl_white_images = isolate_white_hsl(hsl_images)
     combined_images = filter_img_hsl(original_image)
-
     gray_images = grayscale(combined_images)
-
     kernel_size = 5  # 5, 21
     blurred_images = gaussian_blur(gray_images, kernel_size)
     low_threshold = 50  # 0,10
@@ -266,7 +260,8 @@ def process_lane_detection(original_image):
     canny_images = canny_edge_detector(blurred_images, low_threshold, high_threshold)
 
     segmented_images = region_of_interest_chatgpt(canny_images)
-
+    show_image_list([original_image, segmented_images], cols=2, fig_size=(15, 15),
+                    img_labels=['original', 'hsl'])
     rho = 1
     # 1 degree
     theta = (np.pi / 180) * 1
@@ -276,7 +271,6 @@ def process_lane_detection(original_image):
     #hough_lines = hough_transform(segmented_images, rho, theta, threshold, min_line_length, max_line_gap)
 
     hough_lines = hough_transform(segmented_images, rho, theta, threshold, min_line_length, max_line_gap)
-    img_with_lines = draw_lines(original_image, hough_lines)
 
     separated_lanes = separate_lines(hough_lines, original_image)
     img_different_lane_colors = color_lanes(original_image, separated_lanes[0], separated_lanes[1])
@@ -287,11 +281,11 @@ def process_lane_detection(original_image):
                     img_labels=['original', 'hsl'])
 
 # Load the image
-# original_image = cv2.imread('images2/solidWhiteRight.jpg')  # Replace 'your_lane_image.jpg' with the path to your image
-# frame= process_lane_detection(original_image)
-# cv2.imshow('Original Lane',frame)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+original_image = cv2.imread('images2/solidWhiteCurve.jpg')  # Replace 'your_lane_image.jpg' with the path to your image
+frame= process_lane_detection(original_image)
+cv2.imshow('Original Lane',frame)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 # Load Video
 # Read Video file and processs
