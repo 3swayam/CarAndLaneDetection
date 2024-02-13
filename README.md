@@ -11,8 +11,8 @@ YOLOv3 you need to download yolov3.weights file
 
 
 # **Functions**
- # Vehicle Detection
- In this part, we will cover in detail the different steps needed to detect vehicles on lane:
+ # Vehicle/Object Detection
+ In this part, we will cover in detail the different steps needed to detect objects (Car,Truck,Road signs, Person, Animal, Cycle etc) on lane:
 * Prerequisite : **yolov3.weights, yolov3.cfg and coco.names** files
 * Input Image Information: The input image containing the scene with potential vehicles.
 * Image Dimensions: Extracts the height and width of the input image. The third value _ is ignored as it typically corresponds to the number of color channels (e.g., 3 for RGB).
@@ -23,18 +23,31 @@ YOLOv3 you need to download yolov3.weights file
 
  # Lane Detection
  
-In this part, we will cover in detail the different steps needed to identify and classify lane lines.
+In this part, we will cover in detail the different steps needed to identify and classify lanes.
 * Convert original image to HSL
 * Isolate yellow and white from HSL image
 * Combine isolated HSL with original image
-* Convert image to grayscale for easier manipulation
-* Apply Gaussian Blur to smoothen edges
-* Apply Canny Edge Detection on smoothed gray image
 * Trace Region Of Interest and discard all other lines identified by our previous step that are outside this region
+* Convert image to grayscale for easier manipulation
+* Apply Canny Edge Detection on smoothed gray image
 * Perform a Hough Transform to find lanes within our region of interest and trace them in red
 * Separate left and right lanes
 * Interpolate line gradients to create two smooth lines
 
+  # Solid/Dashed Lines Detection
+ 
+In this part, we will cover in detail the different steps needed to identify and classify lane lines (Solid/Dashed).
+* Convert original image to HSL
+* Isolate yellow and white from HSL image
+* Combine isolated HSL with original image
+* Trace Region Of Interest and discard all other lines identified by our previous step that are outside this region
+* Convert image to grayscale for easier manipulation
+* Apply Canny Edge Detection on smoothed gray image
+* Perform a Hough Transform to find lanes within our region of interest
+* Classify Solid and dashed lines based on threshold length
+* Draw both lines in different colors
+
 # Future Improvements
 
-In the future, I also plan to fine tune the detection. For lane detection add some better visual representation. Along with that detect , solid and dashed lines on lane.
+* In the future, I also plan to apply Non-Maximum Suppression (NMS) to remove redundant bounding box predictions and improve the accuracy of object detection.
+* Increase accuracy on the solid and dashed lines detection 
